@@ -70,4 +70,5 @@ void _div(stack_t **head, unsigned int counter);
 void mul(stack_t **head, unsigned int counter);
 void mod(stack_t **head, unsigned int counter);
 void pchar(stack_t **head, unsigned int counter);
+void pstr(stack_t **head, unsigned int counter);
 #endif
