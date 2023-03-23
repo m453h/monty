@@ -1,21 +1,23 @@
 #include "monty.h"
 
 /**
-* addnode - function that adds node to the head stack
+* add_node - adds node to the head stack
 * @head: pointer to the pointer of a head to a stack_t
 * @n: new value
 *
 * Return: nothing
 */
-void addnode(stack_t **head, int n)
+void add_node(stack_t **head, int n)
 {
 	stack_t *new_node, *temp;
 
 	temp = *head;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-	{ printf("Error\n");
-		exit(0); }
+	{
+		printf("Error\n");
+		exit(0);
+	}
 	if (temp)
 		temp->prev = new_node;
 	new_node->n = n;
@@ -25,13 +27,13 @@ void addnode(stack_t **head, int n)
 }
 
 /**
-* f_queue - prints the top of the queue
+* print_queue - prints the top of the queue
 * @head: pointer to the pointer of a head to a stack_t
 * @counter: line count
 *
 * Return: (void)
 */
-void f_queue(stack_t **head, unsigned int counter)
+void print_queue(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
@@ -39,13 +41,13 @@ void f_queue(stack_t **head, unsigned int counter)
 }
 
 /**
-* addqueue - adds node to queue tail
+* add_to_queue - adds node to queue tail
 * @n: value of tail
 * @head: pointer to the pointer of a head to a stack_t
 *
 * Return: (void)
 */
-void addqueue(stack_t **head, int n)
+void add_to_queue(stack_t **head, int n)
 {
 	stack_t *new_node, *temp;
 
