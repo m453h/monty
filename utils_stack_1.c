@@ -94,3 +94,16 @@ void add(stack_t **head, unsigned int counter)
 	*head = iterator->next;
 	free(iterator);
 }
+
+/**
+* nop - function that doesn't do anything
+* @head: double head pointer to the stack
+* @counter: line count
+*
+* Return: (void)
+*/
+void nop(stack_t **head, unsigned int counter)
+{
+	(void) counter;
+	(void) head;
+}
