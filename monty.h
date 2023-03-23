@@ -55,10 +55,11 @@ extern bus_t bus;
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void free_stack(stack_t *head);
 void print_stack(stack_t **head, unsigned int counter);
-void push(stack_t **head, unsigned int number);
-void pall(stack_t **head, unsigned int number);
-void pint(stack_t **head, unsigned int counter);
 void add_node(stack_t **head, int n);
 void print_queue(stack_t **head, unsigned int counter);
 void add_to_queue(stack_t **head, int n);
+void push(stack_t **head, unsigned int number);
+void pall(stack_t **head, unsigned int number);
+void pint(stack_t **head, unsigned int counter);
+void pop(stack_t **head, unsigned int counter);
 #endif

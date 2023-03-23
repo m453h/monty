@@ -21,7 +21,7 @@ void free_stack(stack_t *head)
 
 /**
 * print_stack - function that prints the top
-* @head: head of stack
+* @head: pointer to the pointer of a head to a stack
 * @counter: number of lines
 *
 * Return: (void)
