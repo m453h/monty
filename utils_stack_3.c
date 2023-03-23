@@ -57,3 +57,64 @@ void pstr(stack_t **head, unsigned int counter)
 	}
 	printf("\n");
 }
+
+/**
+* rotl- rotates the stack to the top
+* @head: pointer to the pointer of a head to a stack
+* @counter: line count
+*
+* Return: (void)
+*/
+void rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+{
+	stack_t *iterator = *head, *h;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+
+	h = (*head)->next;
+	h->prev = NULL;
+
+	while (iterator->next != NULL)
+	{
+		iterator = iterator->next;
+	}
+
+	iterator->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = iterator;
+	(*head) = h;
+}
+
+/**
+* rotr - rotates the stack to the bottom
+* @head: pointer to the pointer of a head to a stack
+* @counter: line count
+*
+* Return: (void)
+*/
+void rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+{
+	stack_t *iterator;
+
+	iterator = *head;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+
+	while (iterator->next)
+	{
+		iterator = iterator->next;
+	}
+
+	iterator->next = *head;
+	iterator->prev->next = NULL;
+	iterator->prev = NULL;
+	(*head)->prev = iterator;
+	(*head) = iterator;
+}
+

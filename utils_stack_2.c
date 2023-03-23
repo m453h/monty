@@ -64,7 +64,7 @@ void mul(stack_t **head, unsigned int counter)
 		iterator = iterator->next;
 		length++;
 	}
-	
+
 	if (length < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", counter);
@@ -81,7 +81,7 @@ void mul(stack_t **head, unsigned int counter)
 }
 
 /**
-* mod - computes the rest of the division of the second top 
+* mod - computes the rest of the division of the second top
 * element of the stack by the top element of the stack.
 * @head: pointer to the pointer of a head to a stack
 * @counter: line count

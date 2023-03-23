@@ -11,32 +11,21 @@
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
-	instruction_t instructions[] = {
-				{"push", push},
-				{"pall", pall},
-				{"pint", pint},
-				{"pop", pop},
-				{"swap", swap},
-				{"add", add},
-				{"nop", nop},
-				{"sub", sub},
-				{"div", _div},
-				{"mul", mul},
-				{"mod", mod},
-				{"pchar", pchar},
-				{"pstr", pstr},
+	instruction_t instructions[] = {{"push", push}, {"pall", pall},
+				{"pint", pint}, {"pop", pop}, {"swap", swap},
+				{"add", add}, {"nop", nop}, "sub", sub},
+				{"div", _div}, {"mul", mul},
+				{"mod", mod}, {"pchar", pchar},
+				{"pstr", pstr}, {"rotr", rotr}, {"rotl", rotl},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
 	char *op;
 
 	op = strtok(content, " \n\t");
-
 	if (op && op[0] == '#')
 		return (0);
-
 	bus.arg = strtok(NULL, " \n\t");
-
 	while (instructions[i].opcode && op)
 	{
 		if (strcmp(op, instructions[i].opcode) == 0)
@@ -45,7 +34,6 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		}
 		i++;
 	}
-
 	if (op && instructions[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
