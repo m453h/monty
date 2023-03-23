@@ -73,4 +73,6 @@ void pchar(stack_t **head, unsigned int counter);
 void pstr(stack_t **head, unsigned int counter);
 void rotl(stack_t **head,  __attribute__((unused)) unsigned int counter);
 void rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void set_stack_mode(stack_t **head, unsigned int counter);
+void set_queue_mode(stack_t **head, unsigned int counter);
 #endif
