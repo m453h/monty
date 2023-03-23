@@ -12,12 +12,13 @@
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t instructions[] = {{"push", push}, {"pall", pall},
-				{"pint", pint}, {"pop", pop}, {"swap", swap},
-				{"add", add}, {"nop", nop}, "sub", sub},
+				{"pint", pint},{"pop", pop},
+				{"swap", swap}, {"add", add},
+				{"nop", nop}, {"sub", sub},
 				{"div", _div}, {"mul", mul},
 				{"mod", mod}, {"pchar", pchar},
-				{"pstr", pstr}, {"rotr", rotr}, {"rotl", rotl},
-				{NULL, NULL}
+				{"pstr", pstr}, {"rotr", rotr},
+				{"rotl", rotl}, {NULL, NULL}
 				};
 	unsigned int i = 0;
 	char *op;
