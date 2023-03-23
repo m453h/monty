@@ -107,3 +107,38 @@ void nop(stack_t **head, unsigned int counter)
 	(void) counter;
 	(void) head;
 }
+
+/**
+* sub - subtracts top stack element from the second top element
+* @head: double head pointer to the stack
+* @counter: line count
+*
+* Return: (void)
+*/
+void sub(stack_t **head, unsigned int counter)
+{
+	stack_t *iterator;
+	int sub, length = 0;
+
+	iterator = *head;
+	while (iterator != NULL)
+	{
+		length++;
+		iterator = iterator->next;
+	}
+
+	if (length < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+
+	iterator = *head;
+	sub = iterator->next->n - iterator->n;
+	iterator->next->n = sub;
+	*head = iterator->next;
+	free(iterator);
+}
